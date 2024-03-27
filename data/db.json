@@ -1,0 +1,50 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "José",
+      "foto": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1229.jpg",
+      "descripcion": "Este es el primer usuario",
+      "coordenadas": [
+        "-12.324",
+        "65.4321"
+      ],
+      "comentarios": "Muy buen usuario",
+      "direccion": "Calle falsa 123"
+    },
+    {
+      "id": 3,
+      "nombre": "Ana",
+      "foto": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/96.jpg",
+      "descripcion": "Este es el tercer usuario",
+      "coordenadas": [
+        "-17.324",
+        "45.4321"
+      ],
+      "comentarios": "Muy buenooo",
+      "direccion": "Calle falsa 978"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Linterna",
+      "precio": 233.33
+    },
+    {
+      "id": 2,
+      "nombre": "Disco",
+      "precio": 133.33
+    },
+    {
+      "id": 3,
+      "nombre": "Memoria",
+      "precio": 433.33
+    },
+    {
+      "id": 4,
+      "nombre": "Monitor",
+      "precio": 633.33
+    }
+  ]
+}

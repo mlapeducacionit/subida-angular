@@ -1,0 +1,164 @@
+<div class="card bg-secondary bg-opacity-75 p-3 mt-3">
+  <h2 class="display-2">Componente Estructura</h2>
+  <hr>
+
+  <!-- -----------------------------------------------------  -->
+  <!-- -----------------------------------------------------  -->
+  <!-- Me traigo la info de los clientes desde el servicio -->
+  <!-- -----------------------------------------------------  -->
+  <!-- -----------------------------------------------------  -->
+
+  <div class="card bg-danger bg-opacity-25 p-4">
+    <h3>Listado de clientes desde el servicio de Clientes</h3>
+
+    <button class="btn btn-danger" (click)="borrarCliente()">Borrar Cliente</button>
+
+    <ul>
+      <li *ngFor="let cliente of clientes">{{cliente}}</li>
+    </ul>
+  </div>
+
+  <!-- -----------------------------------------------------  -->
+  <!-- -----------------------------------------------------  -->
+
+
+  <!-- *ngIf - *ngFor - * ngSwitch -->
+
+  <!-- -------------------------------- -->
+  <h3>Directiva *ngIf </h3>
+  <!-- -------------------------------- -->
+
+  <button class="btn btn-success mb-3" (click)="mostrar=!mostrar">
+    {{ mostrar ? 'Ocultar' : 'Mostrar' }}
+  </button>
+
+  <!-- p.alert.alert-info>lorem20 -->
+  <p *ngIf="mostrar; else oculto" class="alert alert-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ab laboriosam commodi necessitatibus placeat, accusantium quisquam blanditiis officiis velit repudiandae.</p>
+
+  <ng-template #oculto> <!-- creo una referencia de la etiqueta ng-tempalte -->
+    <p class="alert alert-danger">
+      Elemento Removido
+    </p>
+  </ng-template>
+
+  <!-- p.alert.alert-danger{Elemento Removido} -->
+  <!-- <p *ngIf="!mostrar" class="alert alert-danger">
+    Elemento Removido
+  </p> -->
+
+  <!-- -------------------------------- -->
+  <h3>Directiva *ngFor </h3>
+  <!-- -------------------------------- -->
+
+  <h5>Array de strings (en una lista)</h5>
+
+  <ul>
+    <li *ngFor="let persona of personas; index as indice">
+      {{ indice+1 }} - {{ persona }}
+    </li>
+  </ul>
+
+ <!--  <ul>
+    <li>{{ personas[0] }}</li>
+    <li>{{ personas[1] }}</li>
+    <li>{{ personas[2] }}</li>
+    <li>{{ personas[3] }}</li>
+    <li>{{ personas[4] }}</li>
+  </ul> -->
+
+  <hr>
+
+  <h5>Array de objetos (en una lista)</h5>
+
+  <!-- my -> top/bottom -->
+  <!-- me -> right -->
+  <!-- ms -> left -->
+  <!-- mt -> top -->
+  <!-- mb -> bottom -->
+  <!-- mx -> left/right -->
+  <button class="btn btn-success my-3" (click)="agregarAlumno()">Agregar Alumno</button>
+
+  <ng-template #ninguno>
+    <h6 class="alert alert-danger">No se encontraron alumnos</h6>
+  </ng-template>
+
+  <!-- ! DETALLES -->
+  <!-- <pre> {{ alumnos | json }} </pre> -->
+  <!-- <pre> {{ alumnos.length }} </pre> -->
+
+  <hr>
+
+  <div *ngIf="alumnos.length; else ninguno">
+    <ul>
+      <li *ngFor="let alumno of alumnos; index as i">
+        <!-- {{ i + 1 }} - {{ alumno | json }} -->
+        <!-- {{ (i + 1) + ' - ' + (alumno | json) }} -->
+        <!-- {{ `${(i + 1)} - ${(alumno | json)}` }} --> <!-- No puedo utilizar Tempalte String -->
+        {{ i + 1 }} - {{ alumno.nombre }} {{ alumno.apellido }}
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+
+  <div *ngIf="alumnos.length; else ninguno">
+
+  <!-- .table-responsive>table.table.table-dark>thead+tbody -->
+  <div class="table-responsive">
+    <table class="table table-dark">
+      <thead>
+        <!-- tr>th*5 -->
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+          <th>Curso</th>
+          <th>Foto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of alumnos">
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.apellido }}</td>
+          <td>{{ alumno.edad }}</td>
+          <td>{{ alumno.curso ? 'Si' : 'No' }}</td>
+          <td>
+            <img [src]="alumno.foto" alt="foto de {{ alumno.nombre}}" width="50px">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h5 class="mb-4">Array de objetos (en un media object de bootstrap)</h5>
+
+    <div *ngFor="let alumno of alumnos; index as orden" class="d-flex alert alert-warning">
+      <div class="flex-shrink-0">
+        <img [src]="alumno.foto" alt="foto del {{ alumno.nombre }}" width="200px">
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <h6>Alumno {{ orden + 1 }}</h6>
+        <hr>
+        <p>Nombre: <b>{{ alumno.nombre }} {{ alumno.apellido }}</b></p>
+        <p>Edad: <i>{{ alumno.edad }}</i></p>
+        <p>Hizo el curso: {{ alumno.curso ? 'Si' : 'No' }}</p>
+        <hr>
+        <button class="btn btn-danger" (click)="borrarAlumno(orden)">Borrar</button>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+
+
+</div>

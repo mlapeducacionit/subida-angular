@@ -1,0 +1,51 @@
+<div class="card bg-secondary bg-opacity-75 p-3 mt-3">
+  <h2 class="display-2">Componente Binding</h2>
+  <hr>
+
+  <h3>Data Binding</h3>
+
+  <!-- -------------------- -->
+  <h4>Interpolación</h4>
+  <!-- -------------------- -->
+
+  <p> {{ 5 + 2 }} </p>
+
+  <p> {{ mensaje }} </p>
+
+  <hr>
+
+  <!-- -------------------- -->
+  <h4>Property Binding</h4>
+  <!-- -------------------- -->
+
+  <input type="text" value="123">
+  <input type="text" value="valor1">
+
+  <input type="text" value="{{valor1}}">
+  <input type="text" [value]="valor2">
+
+  <hr>
+
+  <!-- -------------------- -->
+  <h4>Event Binding</h4>
+  <!-- -------------------- -->
+
+  <!-- button.btn.btn-success.my-2{Incrementar} -->
+  <button class="btn btn-success my-2" (click)="contador=contador+1">Incrementar: {{contador}}</button>
+
+  <!-- -------------------- -->
+  <h4>Doble data Binding</h4>
+  <!-- -------------------- -->
+
+  <h5>Manual</h5>
+
+  <input type="text" [value]="valor3" (input)="modificar($event)"> {{ valor3 }}
+
+  <h5>Automático</h5>
+  <!-- ngModel <--- directiva (buildin -> dentro de la librería de angular) -->
+
+  <input type="text" [(ngModel)]="valor4"> {{ valor4 }}
+
+
+
+</div>

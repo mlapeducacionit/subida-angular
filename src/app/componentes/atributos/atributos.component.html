@@ -1,0 +1,68 @@
+<div class="card bg-secondary bg-opacity-75 p-3 mt-3">
+  <h2 class="display-2">Componente Atributos</h2>
+  <hr>
+
+  <!-- ------------------------------------- -->
+  <!-- ------------------------------------- -->
+
+  <app-panel></app-panel>
+
+  <!-- ------------------------------------- -->
+  <!-- ------------------------------------- -->
+  <h3>[ngStyle]</h3>
+
+  <button class="btn btn-warning mb-3" (click)="estado1=!estado1">
+    Cambiar fondo a {{ estado1 ? 'blue' : 'gold' }}
+  </button>
+
+  <p [ngStyle]="cambiarPropiedad(estado1)">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+
+<!--  <p [ngStyle]="
+  {
+    backgroundColor: estado1 ? 'blue' : 'gold',
+    color: estado1 ? 'white' : 'black',
+    padding: estado1 ? '10px' : '15px',
+    'border-radius': '10px'
+  }
+    ">Lorem, ipsum dolor sit amet consectetur adipisicing.</p> -->
+
+  <!-- <p [ngStyle]="{ backgroundColor: 'blue', color: 'white', padding: '10px', 'border-radius': '10px' }">Lorem, ipsum dolor sit amet consectetur adipisicing.</p> -->
+
+  <!-- ! <p [ngStyle]="{}"></p>  --> <!-- ngStyle recibe un obj -->
+
+  <!-- <p style="background-color: blue; color: white; padding: 10px; border-radius: 10px;">Lorem, ipsum dolor sit amet consectetur adipisicing.</p> -->
+
+  <!-- ------------------------------------- -->
+  <!-- ------------------------------------- -->
+  <h3>[ngClass]</h3>
+
+  <button class="btn btn-warning mb-3" (click)="estado2=!estado2">
+    Cambiar el fondo a {{ estado2 ? 'dark' : 'danger' }}
+  </button>
+
+  <p [ngClass]="cambiarClase(estado2, 'btn-success')">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+  <p [ngClass]="cambiarClase(estado2, 'btn-success', 'btn-warning')">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+ <!--  <p [ngClass]="{ btn: true, 'btn-dark': false, 'btn-danger': true}">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p> -->
+
+  <!-- <p class="btn btn-dark">Lorem, ipsum dolor sit amet consectetur
+  adipisicing elit.</p> -->
+
+  <!-- ------------------------------------- -->
+  <!-- ------------------------------------- -->
+  <h3>[Directivas personalizadas]</h3>
+
+  <hr>
+
+  <p appResaltar colorMaxi="blueviolet">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique in quaerat totam qui rem sunt sit ducimus dicta, dolores, odit, et temporibus vero suscipit tempore voluptas velit optio quia adipisci.</p>
+
+  <p appResaltar colorBase="orange" colorMaxi="purple">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique in quaerat totam qui rem sunt sit ducimus dicta, dolores, odit, et temporibus vero suscipit tempore voluptas velit optio quia adipisci.</p>
+
+  <p appResaltar [colorBase]="colorImportante" colorMaxi="purple">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique in quaerat totam qui rem sunt sit ducimus dicta, dolores, odit, et temporibus vero suscipit tempore voluptas velit optio quia adipisci.</p>
+
+  <p [appResaltar]="colorInicial" colorMaxi="purple">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique in quaerat totam qui rem sunt sit ducimus dicta, dolores, odit, et temporibus vero suscipit tempore voluptas velit optio quia adipisci.</p>
+
+
+
+</div>

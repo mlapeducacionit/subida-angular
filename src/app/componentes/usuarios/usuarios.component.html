@@ -1,0 +1,47 @@
+<div class="card bg-danger bg-opacity-75 p-3 mt-3">
+  <h2 class="display-2">Componente Usuarios</h2>
+  <hr>
+
+  <button
+    class="btn btn-info my-3 me-2"
+    (click)="obtenerUsuarios()"
+  >
+    GET
+  </button>
+  <button
+    class="btn btn-success my-3 me-2"
+    (click)="guardarUsuario()"
+  >
+    POST
+  </button>
+
+  <!-- <pre><p>{{ usuarios | json }}</p></pre> -->
+
+  <div *ngFor="let usuario of usuarios; index as orden" class="d-flex alert alert-warning">
+    <div class="flex-shrink-0">
+      <img [src]="usuario.foto" alt="foto del {{ usuario.nombre }}" width="200px">
+    </div>
+    <div class="flex-grow-1 ms-3">
+      <h6>usuario {{ orden + 1 }} - ID: {{ usuario.id }} </h6>
+      <hr>
+      <p>Nombre: <b>{{ usuario.nombre }}</b></p>
+      <p>Descripción: <i>{{ usuario.descripcion }}</i></p>
+      <p>Dirección: <i>{{ usuario.direccion }} - {{ usuario.coordenadas }} </i></p>
+      <p>Comentarios: <i>{{ usuario.comentarios }}</i></p>
+
+
+      <button
+        class="btn btn-warning"
+        (click)="actualizarUsuario(usuario.id)">
+        PUT
+      </button>
+      <button
+        class="btn btn-danger"
+        (click)="borrarUsuario(usuario.id)">
+        DELETE
+      </button>
+    </div>
+  </div>
+
+
+</div>
