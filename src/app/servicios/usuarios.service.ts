@@ -14,19 +14,19 @@ export class UsuariosService {
 
   // GET
   obtener() {
-    return this.httpClient.get<IUsuarios[]>(this.url) /* Me retorna un observable */
+    return this.httpClient.get<IUsuario[]>(this.url) /* Me retorna un observable */
   }
   // POST
-  guardar(usuario:IUsuarios) {
-    return this.httpClient.post<IUsuarios>(this.url, usuario)
+  guardar(usuario:IUsuario) {
+    return this.httpClient.post<IUsuario>(this.url, usuario)
   }
   // PUT
-  actualizar(usuario:IUsuarios, id:string|undefined) {
-    return this.httpClient.put<IUsuarios>(this.url+id, usuario)
+  actualizar(usuario:IUsuario, id:string|undefined) {
+    return this.httpClient.put<IUsuario>(this.url+id, usuario)
   }
   // DELETE
   borrar(id:string|undefined) {
-    return this.httpClient.delete<IUsuarios>(this.url+id)
+    return this.httpClient.delete<IUsuario>(this.url+id)
   }
 
 }
